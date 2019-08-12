@@ -1,0 +1,67 @@
+\chapter{Legendre polynomials}
+\label{ch:legendre}
+
+
+We start our exposition with \idxentry{Legendre polynomials}{polynomials!Legendre} and motivate them by \idxentry{multipole expansion}{expansion!multipole}. Roughly speaking multipole moments is an infinite set of numbers from which the structure of an isolated system can be reconstructed. It is an alternative description of the system and one way how to understand this is in terms of the \idxentry{Fourier series}{Fourier!series}
+
+\section{Motivation: multipole expansion}
+
+Recall that both in \idxentry{electrostatics}{electrostatics} and \idxentry{Newtonian theory of gravity}{gravity!Newtonian}, the \idxentry{point source}{source!point} has a potential inversely proportional to the distance from the source, the constant of proportionality being the \idxentry{mass}{mass} or the \idxentry{charge}{charge} of the source, respectively. Since electrostatics and Newtonian gravity behave exactly in the same way in this respect, for definiteness we will talk about the charges and \idxentry{electrostatic force}{force!electrostatic}, although we could freely replace them by mass and \idxentry{Newtonian gravitational force}{force!gravitational} (except for the cases when the sign of the charge pays a role but the reader that does not affect the core of the discussion).
+
+However, real sources are \idxentry{extended}{source!extended}: they consist either of a system of point sources or they represent a continuous distribution of charge. In a special case of \idxentry{isolated source}{source!isolated}, the charges are distributed (discretely or continuously) in a finite domain -- we say that sources have a \idxentry{compact support}{support!compact}. 
+
+For a very distant observer (in principle observer who is at infinity), such isolated source appears as a point source whose charge is given by the sum of charges of all source particles. As the observer approaches the source, the internal structure and distribution of the charges becomes more apparent. Imagine, for example a \idxentry{dipole}{dipole}, i.e.\ a system of two charges $+q$ and $-q$ at some fixed distance $d$. While each charge gives rise to a \idxentry{potential}{potential} proportional to $r^{-1}$, the net charge of the dipole vanishes and resulting potential decays as $r^{-2}$, that is, faster than the potential of each charge separately. However, when observer approaches the dipole, he will notice that the potential is non-vanishing, although weak, and he will notice attraction to one charge and repulsion from the other. 
+
+
+\section{Monopole}
+\label{sec:monopole}
+
+
+Thus, the general setting is that there is a compact set $\DD$ of charges $q_i$. Choose the origin of the coordinate system $O$ somewhere in $\DD \ni O$ so that each charge has the \idxentry{position vector}{vector!position} $\bb{r}_i$ with respect to $O$. Potential of each charge is given by the distance $|\bb{r}-\bb{r}_i|$ where $\bb{r}$ is the position vector of a point $P$ lying outside (and typically sufficiently far from) $\DD$, see Figure \ref{fig:isolated-system}. Ignoring the physical constants, the total potential is
+\begin{align}\label{eq:potential-sum}
+    \phi(\bb{r}) &= \sum_{i}^N \frac{q_i}{|\bb{r}-\bb{r}_i|}\, ,
+\end{align}
+where $N$ is the number of charges in $\DD$, $\bb{r}_i$ is the position of $i$-th charge, $\bb{r}$ is the position of a distant observer and $\bb{r}-\bb{r}_i$ is the position of the observer with respect to $i$-th charge. 
+
+
+\begin{figure}
+    \centering
+\begin{tikzpicture}[>=stealth,scale=2]
+        \fill (0,0) circle(1pt) node[anchor=north east] {$O$};
+        \draw[] (6pt,-2pt) node {$\theta_i$};
+     
+        \draw[->,dashed] (0,0) -- (80pt, 60pt) node[pos=0.5, sloped, above=1pt]
+        {$\bb{r}$};
+        
+        
+        
+        \draw (80pt,60pt) node[anchor=south west] {$P$};
+        \draw[dotted] (0, 0) circle (35pt);
+        \draw (0, 33pt) node[anchor=south] {$\DD$};
+        \draw[->,fill,dashed
+        ] (0,0) -- (5pt, -25pt) node[anchor=east] {$\bb{r}_i$};
+        \draw[->] (5pt, -25pt) -- (80pt,60pt) node[pos=0.5,sloped,below=-3pt] {$\bb{r}-\bb{r}_i$};
+        
+        %arc
+        \draw[<->] (2.5pt,-12.5pt) arc (-78.7:37:12.74pt);
+        
+        %charges
+        \draw[fill,blue] (5pt,-25pt) circle(0.5pt) node[anchor=north] {$q_i$};
+        \draw[fill,blue] (-10pt,13pt) circle(0.5pt) node[anchor=east] {$q_j$};
+        \draw[fill,blue] (-25pt,-15pt) circle(0.5pt) node[anchor=west] {$q_k$};
+    \end{tikzpicture}    \caption{Isolated system of charges distributed in compact domain $\DD$ as seen by a far-away observer $P$.}
+    \label{fig:isolated-system}
+\end{figure}
+
+
+If $r \gg r_i$, i.e.\ if we can neglect distance of charges from the origin compared to the distance of the observer, formula \eqref{eq:potential-sum} reduces to
+\begin{align}\label{eq:potential-monopole}
+    \phi(\bb{r}) &\approx \frac{\sum\limits_i q_i}{r} = \frac{Q}{r}\, , &
+    Q = \sum_{i=1}^n q_i\, ,
+\end{align}
+where $Q$ is the total charge of isolated system. We talk about \idxentry{monopole}{monopole} (\idxentry{electric}{monopole!electric} or \idxentry{gravitational}{monopole!gravitational}) because in this approximation it behaves like a single point charge $Q$. The word \emph{monopole} refers to the fact that the lines of force emerge from (if the charge is positive) or end up at (if the charge is negative)  a single point.
+
+
+
+
+Of course, general isolated system is not just monopole, but it always looks like monopole at sufficiently large distances. In order to probe the internal distribution of the charge in the domain $\DD$ we have to measure deviations from the monopole potential \eqref{eq:potential-monopole}. Mathematically, we have to expand \eqref{eq:potential-monopole} into the \idxentry{Taylor expansion}{expansion!Taylor!of the potential} in variables $\bb{r}_i$ (monopole is zeroth term in this expansion obtained simply by putting $\bb{r}_i=0$. For example, the first term of the expansion acquires the form 

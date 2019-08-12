@@ -1,0 +1,84 @@
+%%%%%%%%%%%%%%%%%%%% packages
+%   formatting
+\usepackage{fullpage}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage{bm}
+
+
+%   math symbols and decorations
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathrsfs}
+
+%   hyperlinks
+\usepackage[colorlinks]{hyperref}
+
+%   graphics & TiKz
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{decorations.pathmorphing}
+\usetikzlibrary{arrows}
+\usetikzlibrary{arrows.meta}
+
+% settings
+\setlength{\overfullrule}{5pt}
+
+
+% environments
+\newtheorem{definition}{Definition}
+\newtheorem{example}{Example}
+\newtheorem{lemma}{Lemma}
+\newtheorem{theorem}{Theorem}
+\newenvironment{proof}{\small {\bfseries Proof.}}{$\blacksquare$ \bigskip}
+
+
+
+
+
+% definitions of general symbols 
+
+%   calculus
+\def\dd{\mathrm{d}} % differential
+\def\pd{\partial} % partial derivative
+\def\Lie{\text{\pounds}} % Lie derivative
+\def\hphi{\hat{\phi}} % phi with hat
+
+%   modified symbols
+\def\eps{\varepsilon} % varepsilon
+\def\fii{\varphi} % varphi
+
+%   symbols with standard meaning
+\def\lagr{\mathcal{L}} % lagrangian
+\def\GL{\mathbb{GL}} % GL group
+\def\SO{\mathbb{SO}} % SO group
+
+%   general purpose symbols
+\def\GG{\mathcal{G}}
+\def\AA{\mathcal{A}}
+\def\FF{\mathcal{F}}
+\def\ii{\mathrm{i}}
+\def\UU{\mathbb{U}}
+\def\DD{\mathcal{D}}
+\def\Ucal{\mathcal{U}}
+
+
+%      number sets
+\def\Natural{\mathbb{N}} % naturals
+\def\Integer{\mathbb{Z}} % integers
+\def\Real{\mathbb{R}} % reals
+\def\Complex{\mathbb{C}} % complex
+
+
+\def\Schr{Schr\"odinger\,}
+
+%   operators
+
+\DeclareMathOperator{\id}{\mathrm{id}}
+
+
+%%%%%%%%%%%%%%%%%%%% commands
+
+% formatting
+\newcommand{\bb}[1]{\mathbf{#1}}

@@ -1,0 +1,36 @@
+\documentclass[crop=true]{standalone}
+\usepackage[subpreambles=true]{standalone}
+\usepackage{import}
+
+
+
+%%%%%%%%%%%%%%%%%%%% packages
+\input{tikz-preamble}
+
+\begin{document}
+\thispagestyle{empty}
+\begin{tikzpicture}[>=stealth]
+        \fill (0,0) circle(1pt) node[anchor=north east] {$O$};
+        \draw[red] (6pt,-2pt) node {\scriptsize$\theta_i$};
+     
+        \draw[->,dashed] (0,0) -- (4, 3) node[pos=0.5, sloped, above=1pt]
+        {$\bb{r}$};
+        
+        
+        
+        \draw (4,3) node[anchor=south west] {$P$};
+        \draw[dotted] (0, 0) circle (35pt);
+        \draw (0, 33pt) node[anchor=south] {$\DD$};
+        \draw[->,fill,dashed
+        ] (0,0) -- (5pt, -25pt) node[anchor=east] {$\bb{r}_i$};
+        \draw[->] (5pt, -25pt) -- (4,3) node[pos=0.5,sloped,below=-3pt] {$\bb{r}-\bb{r}_i$};
+        
+        %arc
+        \draw[<->] (2.5pt,-12.5pt) arc (-78.7:37:12.74pt);
+        
+        %charges
+        \draw[fill,blue] (5pt,-25pt) circle(0.5pt) node[anchor=north] {\scriptsize$q_i$};
+        \draw[fill,blue] (-10pt,13pt) circle(0.5pt) node[anchor=east] {\scriptsize$q_j$};
+        \draw[fill,blue] (-25pt,-15pt) circle(0.5pt) node[anchor=west] {\scriptsize$q_k$};
+    \end{tikzpicture}
+\end{document}
