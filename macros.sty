@@ -49,7 +49,21 @@
 
 
 %\usepackage{showidx}
-\usepackage{imakeidx}
-\makeindex
-\newcommand{\idxentry}[2]{{\color{blue}{{\itshape #1}}\index{#2}}}
+%\usepackage{imakeidx}
+%\makeindex
 
+\usepackage{makeidx}
+\makeindex
+% 1. inline text, 2. index entry, 3. internal label, 4. hyperlink
+\newcommand{\idxentry}[4]{
+    \index{#2 \string\raisebox{\baselineskip}[0pt]{\string\hypertarget{idx:#3}{}}}
+    \hyperlink{idx:#3}{#1}
+}
+
+% \makeatletter
+% \def\@wrindex#1{%
+%   \raisebox{\baselineskip}[0pt]{\hypertarget{indexto\theindexlink}{}}%
+%   \protected@write\@indexfile{}%
+%      {\string\indexentry{#1|hyperlink{indexto\theindexlink}}{\thepage}}%
+% \endgroup\@esphack}% started by \index
+% \makeatother
